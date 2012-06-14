@@ -8,7 +8,7 @@ function find_handler(m2conf, route, host_name)
 
     for _, server in ipairs(m2conf.servers) do
         for _, host in ipairs(server.hosts) do
-            if host.name == host_name then
+            if host.name == host_name and host.routes[route] ~= nil then
                 return host.routes[route]
             end
         end
